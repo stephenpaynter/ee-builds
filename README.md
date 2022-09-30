@@ -1,37 +1,67 @@
-# Ansible EE Builds 
+# Building and Running Ansible Execution Environments 
 
-login to registry.redhat.io
+### Building an Execution Environment
 
-'podman login registry.redhat.io'
-'Username: steve.paynter'  
-'Password:              '
-'Login Succeeded!  '
+Login to registry.redhat.io
+
+```
+podman login registry.redhat.io
+Username: steve.paynter  
+Password:              
+Login Succeeded!
+```
 
 
-Build the container
+Build the container. Specify a tag for the container build, set verbosity to level three for output.
 
+```
 ansible-builder build --tag network_ee -v 3
+```
+
+
+Runner Input Directory Hierarchy
+
+
+```
+.
+├── env
+│   ├── envvars
+│   ├── extravars
+│   ├── passwords
+│   ├── cmdline
+│   ├── settings
+│   └── ssh_key
+├── inventory
+│   └── hosts
+└── project
+    ├── test.yml
+    └── roles
+        └── testrole
+            ├── defaults
+            ├── handlers
+            ├── meta
+            ├── README.md
+            ├── tasks
+            ├── tests
+            └── vars
+```
+
+Refer to documentation at https://ansible-runner.readthedocs.io/en/stable/intro/  
 
 
 
-structure
 
-[stephenpaynter@aap Ansible]$ ls -al
-total 4
-drwxr-xr-x.  6 stephenpaynter stephenpaynter   59 Sep 30 13:56 .  
-drwx------. 18 stephenpaynter stephenpaynter 4096 Sep 30 13:54 ..  
-drwx------.  3 stephenpaynter stephenpaynter   23 Sep 30 13:56 ee   
-drwxr-xr-x.  2 stephenpaynter stephenpaynter   21 Sep 30 13:31 env   
-drwxr-xr-x.  2 stephenpaynter stephenpaynter   23 Sep 30 13:30 inventory   
-drwxrwxr-x.  4 stephenpaynter stephenpaynter   90 Sep 30 13:30 project  
-[stephenpaynter@aap Ansible]$  
+### Running an Execution Environment
 
+Navigate to the folder containing the project directory, this will run the default container configured with env vars.
 
-  
-  
-ansible-runner run  -p helloworld.yml .   from within directory where project is. 
+```
+ansible-runner run  -p helloworld.yml .
+```
 
+Navigate to the folder containing the project directory, this will run a specified container overriding the default cnonfigured.
 
+```
 ansible-runner run -p helloworld.yml . --container-image=network_ee  to change image from one specified in env.  
-
+```
 
