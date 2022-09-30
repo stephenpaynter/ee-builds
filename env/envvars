@@ -1,0 +1,5 @@
+# env/settings
+---
+container_image: localhost/network_ee
+process_isolation_executable: podman
+process_isolation: true
