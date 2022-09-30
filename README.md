@@ -3,7 +3,12 @@
 
 login to registry.redhat.io
 
-[stephenpaynter@aap ee-network]$ podman login registry.redhat.io
-Username: steve.paynter
-Password: 
-Login Succeeded!
+[stephenpaynter@aap ee-network]$ podman login registry.redhat.io  
+Username: steve.paynter  
+Password:  
+Login Succeeded!  
+
+
+Build the container
+
+ansible-builder build --tag network_ee -v 3
