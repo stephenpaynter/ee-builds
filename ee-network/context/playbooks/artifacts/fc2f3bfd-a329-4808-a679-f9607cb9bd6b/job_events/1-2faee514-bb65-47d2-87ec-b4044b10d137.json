@@ -1,0 +1,1 @@
+{"event": "verbose", "uuid": "2faee514-bb65-47d2-87ec-b4044b10d137", "counter": 1, "stdout": "Error: workdir \"/runner/project\" does not exist on container 1cd2b98b50438d2dfcd48961be1f4655e7ee36c20a6dd8b22ee481c93525ef60", "start_line": 0, "end_line": 1, "runner_ident": "fc2f3bfd-a329-4808-a679-f9607cb9bd6b", "created": "2022-09-30T12:01:57.672438"}

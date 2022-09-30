@@ -1,0 +1,12 @@
+--- 
+version: 1.0
+
+build_arg_defaults: 
+  EE_BASE_IMAGE: registry.redhat.io/ansible-automation-platform-22/ee-29-rhel8:1.0.0-142
+  EE_BUILDER_IMAGE: registry.redhat.io/ansible-automation-platform-21/ansible-builder-rhel8:1.0.1-95
+
+
+dependencies: 
+  python: ./requirements.txt
+  galaxy: ./requirements.yml
+  system: ./bindep.txt
