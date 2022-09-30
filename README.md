@@ -1,12 +1,11 @@
-# ee-builds
-
+# Ansible EE Builds 
 
 login to registry.redhat.io
 
-[stephenpaynter@aap ee-network]$ podman login registry.redhat.io  
-Username: steve.paynter  
-Password:  
-Login Succeeded!  
+'podman login registry.redhat.io'
+'Username: steve.paynter'  
+'Password:              '
+'Login Succeeded!  '
 
 
 Build the container
